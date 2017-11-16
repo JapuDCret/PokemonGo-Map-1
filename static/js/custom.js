@@ -3,12 +3,22 @@ $(function () {
 
 	if(window.map) {
     var dFullPolygon;
+	//Fredenbaum Markt
+    var dFredenbaumX;
+	var dFredenbaumDesc = {lat: 51.537090, lng: 7.444414};
+	var contentFredenbaumDesc = '<div><center><font size="4"><b><u>Weihnachtsmarkt im Fredenbaumpark<br></u></b></font></center>Der Fredenbaumpark hat hier einen Weihnachtsmarkt. <br>Aus diesem Grund ist die schwarze Fläche nicht ohne Zusatzkosten zugänglich.</div>'
+	var infowindow = new google.maps.InfoWindow({
+		content: contentFredenbaumDesc
+	});
 
+	
     var updateGeofences = function() {
         if(!Store.get('showGeofence')) {
             if(dFullPolygon) {
                 console.log('geofence > setting dFUllPolygons map to null')
                 dFullPolygon.setMap(null);
+				//Fredenbaum
+                dFredenbaumX.setMap(null);
             }
         } else {
             if(dFullPolygon == null) {
@@ -40,6 +50,81 @@ $(function () {
                         {lat: 51.6079431697554, lng: 7.4703598022461},
                         {lat: 51.6116210116669, lng: 7.4325084686279}
 					];
+				//Fredenbaum
+				var dFredenbaumXCoords = [
+                        {lat: 51.5371383449544, lng: 7.44769360703},
+                        {lat: 51.5372567978917, lng: 7.44757041331},
+                        {lat: 51.5374002756845, lng: 7.4475502967834},
+                        {lat: 51.5381243311336, lng: 7.4470084905624},
+                        {lat: 51.5383412118603, lng: 7.44666678085},
+                        {lat: 51.5384913594503, lng: 7.4462252855301},
+                        {lat: 51.5385080424853, lng: 7.4455654621124},
+                        {lat: 51.5384780130179, lng: 7.4450719356537},
+                        {lat: 51.5384446469198, lng: 7.444766163826},
+                        {lat: 51.5384179540237, lng: 7.4446320533752},
+                        {lat: 51.5383712414179, lng: 7.4444764852524},
+                        {lat: 51.5383111822828, lng: 7.4442833662033},
+                        {lat: 51.5383011724193, lng: 7.4441975355148},
+                        {lat: 51.5382911625536, lng: 7.4440795183182},
+                        {lat: 51.5382878259311, lng: 7.4439239501953},
+                        {lat: 51.5382944991757, lng: 7.4437308311462},
+                        {lat: 51.5382878259311, lng: 7.4434626102448},
+                        {lat: 51.5382577963185, lng: 7.4430817365646},
+                        {lat: 51.5382110835483, lng: 7.4427330493927},
+                        {lat: 51.5381743806238, lng: 7.4424594640732},
+                        {lat: 51.538127667768, lng: 7.4421536922455},
+                        {lat: 51.5380042121325, lng: 7.4419820308685},
+                        {lat: 51.5378970223396, lng: 7.4418137222528},
+                        {lat: 51.5378599020801, lng: 7.4416990578175},
+                        {lat: 51.5378290380211, lng: 7.4416038393974},
+                        {lat: 51.5377714806658, lng: 7.4415528774261},
+                        {lat: 51.5376459386458, lng: 7.4416454136372},
+                        {lat: 51.5376065242192, lng: 7.4415361136198},
+                        {lat: 51.5374770194345, lng: 7.4420973658562},
+                        {lat: 51.5373969389968, lng: 7.4426257610321},
+                        {lat: 51.5372734813792, lng: 7.442598938942},
+                        {lat: 51.5371400133078, lng: 7.4425828456879},
+                        {lat: 51.5370565955645, lng: 7.4425935745239},
+                        {lat: 51.5370065448451, lng: 7.4426203966141},
+                        {lat: 51.5368864228939, lng: 7.4427115917206},
+                        {lat: 51.5366995658954, lng: 7.4428564310074},
+                        {lat: 51.5366194840898, lng: 7.4429154396057},
+                        {lat: 51.5364860141006, lng: 7.442974448204},
+                        {lat: 51.5363592172484, lng: 7.4430227279663},
+                        {lat: 51.5363859113519, lng: 7.4431943893433},
+                        {lat: 51.5364126054397, lng: 7.4433928728104},
+                        {lat: 51.5364392995119, lng: 7.4435698986053},
+                        {lat: 51.5364392995119, lng: 7.4436771869659},
+                        {lat: 51.5364025951586, lng: 7.4437576532364},
+                        {lat: 51.5363258495969, lng: 7.4437952041626},
+                        {lat: 51.5362290832696, lng: 7.4438327550888},
+                        {lat: 51.5360488971462, lng: 7.4438917636871},
+                        {lat: 51.5359888349466, lng: 7.4439346790314},
+                        {lat: 51.5359087518905, lng: 7.4440848827362},
+                        {lat: 51.5357953006531, lng: 7.4442458152771},
+                        {lat: 51.5356584914319, lng: 7.4444174766541},
+                        {lat: 51.5356184496309, lng: 7.4445301294327},
+                        {lat: 51.5356184496309, lng: 7.4446374177933},
+                        {lat: 51.5356551546165, lng: 7.4447447061539},
+                        {lat: 51.5357652693959, lng: 7.4449163675308},
+                        {lat: 51.5358119846763, lng: 7.4450021982193},
+                        {lat: 51.5358620367093, lng: 7.445125579834},
+                        {lat: 51.5359379488543, lng: 7.4452060461044},
+                        {lat: 51.5359896691444, lng: 7.4453186988831},
+                        {lat: 51.5359742364833, lng: 7.4454534798861},
+                        {lat: 51.5359546328253, lng: 7.4457223713398},
+                        {lat: 51.5360230370422, lng: 7.4466919898987},
+                        {lat: 51.5360956121356, lng: 7.4471533298492},
+                        {lat: 51.5361289799558, lng: 7.4473142623901},
+                        {lat: 51.5361990522985, lng: 7.4474322795868},
+                        {lat: 51.5363058289944, lng: 7.4475556612015},
+                        {lat: 51.5364760038356, lng: 7.4476790428162},
+                        {lat: 51.5366094738542, lng: 7.4477112293243},
+                        {lat: 51.5367327247268, lng: 7.4477434158325},
+                        {lat: 51.5368593119931, lng: 7.4477541446686},
+                        {lat: 51.537005710666, lng: 7.4477380514145},
+						{lat: 51.5371383449544, lng: 7.4476951360703}
+					];
 
                 //construct the polygon.
                 dFullPolygon = new google.maps.Polygon({
@@ -50,9 +135,30 @@ $(function () {
                     fillColor: '#FF0000',
                     fillOpacity: 0.05
                 });
+				//------- Weihnachtsmarkt Fredenbaum
+                dFredenbaumX = new google.maps.Polygon({
+                    paths: dFredenbaumXCoords,
+                    strokeColor: '#111111',
+                    strokeOpacity: 0.7,
+                    strokeWeight: 3,
+                    fillColor: '#000000',
+                    fillOpacity: 0.25
+                });
+				var marker = new google.maps.Marker({
+				position: dFredenbaumDesc,
+				map: map,
+				title: 'Weihnachtsmarkt !'
+				});
+				marker.addListener('click', function() {
+				infowindow.open(map, marker);
+				});
+				//-----------------------------------
+
             }
             console.log('geofence > setting wolfsburgPolygons map')
             dFullPolygon.setMap(map);
+			//Fredenbaum
+            dFredenbaumX.setMap(map);
         }
     }
     $('#geofence-switch').change(function () {
