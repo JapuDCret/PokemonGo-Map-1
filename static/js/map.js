@@ -600,14 +600,6 @@ function isGymSatisfiesRaidMinMaxFilter(raid) {
 }
 
 function gymLabel(gym, includeMembers = true) {
-<<<<<<< HEAD
-    const pokemonWithImages = [
-        2, 3, 5, 6, 8, 9, 11, 28, 31, 34, 38, 59, 62, 65, 68, 71, 73, 76, 82, 89, 91, 94, 103, 105, 110, 112, 123, 125, 126, 129, 131, 134,
-        135, 136, 137, 139, 143, 144, 145, 146, 150, 153, 156, 159, 243, 244, 245, 248, 249, 302
-    ]
-
-=======
->>>>>>> e54a1347c0dd0865d28255675a215d27111d24f9
     const raid = gym.raid
     var raidStr = ''
     if (raid && raid.end > Date.now()) {
@@ -726,11 +718,6 @@ function gymLabel(gym, includeMembers = true) {
                       Route - Wegbeschreibung
                     </a>
                   </span>
-                </div>
-                <div class='gym info meeting'>
-				  <a target="_blank" href='http://raid.pokemap-nrw.de/get_gym?gym_id=${b64_gym_id}' title='Raid Anmeldung'>
-				    Für Raid anmelden
-				  </a>
                 </div>
                 <div class='gym info last-scanned'>
                     Letzter Scan: ${lastScannedStr}
@@ -1262,10 +1249,18 @@ function updateGymMarker(item, marker) {
             scaledSize: new google.maps.Size(48, 48)
         })
     } else {
+		if(gymTypes[item.team_id] == 'Instinct'){
+			marker.setIcon({
+				url: 'static/images/gym/' + gymTypes[item.team_id] + '_' + getGymLevel(item) + '.png',
+				scaledSize: new google.maps.Size(42,42)
+				})
+        }
+		else{
         marker.setIcon({
             url: 'static/images/gym/' + gymTypes[item.team_id] + '_' + getGymLevel(item) + '.png',
-            scaledSize: new google.maps.Size(36, 36)
-        })
+            scaledSize: new google.maps.Size(36,36)
+			})
+        }
         marker.setZIndex(1)
     }
     marker.infoWindow.setContent(gymLabel(item))
