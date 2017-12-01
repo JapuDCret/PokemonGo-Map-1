@@ -930,6 +930,10 @@ var StoreOptions = {
 		default: false,
 		type: StoreTypes.Boolean
 	},
+	'showGeofencePARK': {
+		default: false,
+		type: StoreTypes.Boolean
+	},
     'showScanned': {
         default: false,
         type: StoreTypes.Boolean
