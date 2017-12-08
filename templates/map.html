@@ -479,14 +479,46 @@
 					<br>
 					Somit scannt die Map von 5:00 bis 6:00&nbsp;Uhr <i><u>nicht</u></i>.</center>
 			</div>
+		  <h3><i class="fa fa-sliders fa-fw"></i>Save Settings</h3>
+			<div>
+			Du hast die Möglichkeit, deine Einstellungen der angezeigten Pokemon, Raids, Arenen etc zu speichern oder zuvor gespeicherte Einstellungen zu laden.<br><br>
+			Beachte, dass dieses Feature nicht für jedes Gerät/Browser kompatibel ist. Auf einem Gerät mit iOS ist das exportieren/importieren der Einstellungen beispielsweise nicht (oder nur eingeschränkt) möglich.
+			<br>
+			<br>
+			<center>
+			
+			<p>
+			<b>Einstellungen speichern:</b>
+					<button class="settings" onclick="download('RM-Do-conf', JSON.stringify(JSON.stringify(localStorage)))">
+						<i class="fa fa-download" aria-hidden="true"></i>
+						Download
+					</button><br>
+			</p>
+			<p>
+			<b>Einstellungen laden:</b><br>
+					<input id="fileInput" style="display:none" onchange="openFile(event)" type="file">
+						<button class="settings" onclick="document.getElementById('fileInput').click()">
+						<i class="fa fa-upload" aria-hidden="true"></i> 
+					Upload
+						</button>
+			</p>
+				</center>
+			</div>
 		  <h3><i class="fa fa-refresh fa-fw"></i>Zurücksetzen</h3>
 			<div>
 					Wenn du die Einstellungen zurücksetzt, dann werden deine Einstellungen komplett gelöscht und die Standardeinstellungen werden wieder hergestellt. <br><br>
 					Zum Zurücksetzen Benutze einfach den Button.<br>
-					<center><button class="settings" onclick="confirm('Sicher?') ? (localStorage.clear(), window.location.reload()) : false"><i class="fa fa-refresh fa-fw"></i>Reset</button></center>
+					<center>
+						<button class="settings" onclick="confirm('Sicher?') ? (localStorage.clear(), window.location.reload()) : false">
+							<i class="fa fa-refresh fa-fw"></i>
+								Reset
+						</button>
+					</center>
 			</div>
         </div>
+
 	</div>
+
       </nav>
       <nav id="stats">
         <div class="switch-container">
