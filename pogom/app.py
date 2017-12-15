@@ -328,7 +328,7 @@ class Pogom(Flask):
                         x.pop('cp_multiplier', None)
             else:
                 for x in d['pokemons']:
-                    if not ( ( ( x['latitude'] >= 51.507 ) and ( x['longitude'] >= 7.448 ) ) and ( ( x['latitude'] <= 51.523 ) and ( x['longitude'] <= 7.479 ) ) ):
+                    #if not ( ( ( x['latitude'] >= 51.507 ) and ( x['longitude'] >= 7.448 ) ) and ( ( x['latitude'] <= 51.523 ) and ( x['longitude'] <= 7.479 ) ) ):
                         x.pop('individual_attack', None)
                         x.pop('individual_defense', None)
                         x.pop('individual_stamina', None)
