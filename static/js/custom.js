@@ -181,6 +181,7 @@ $(function () {
     var DIV5Polygon;
     var DIV6Polygon;
     var DIV7Polygon;
+    var DIVeventPolygon;
     var updateGeofencesIV = function() {
         if(!Store.get('showGeofenceIV')) {
             if(DIV0Polygon) {
@@ -193,6 +194,7 @@ $(function () {
                 DIV5Polygon.setMap(null);
                 DIV6Polygon.setMap(null);
                 DIV7Polygon.setMap(null);
+				DIVeventPolygon.setMap(null);
             }
         } else {
             if(DIV0Polygon == null) {
@@ -729,6 +731,15 @@ $(function () {
                         {lat: 51.5164277007715, lng: 7.4567449092865},
                         {lat: 51.5164944652205, lng: 7.4572062492371}
 					];
+				var DIVeventCoords = [
+                        {lat: 51.5222758953052, lng: 7.410374879837},
+                        {lat: 51.5532000849252, lng: 7.4389243125916},
+                        {lat: 51.5530433147842, lng: 7.4958997964859},
+                        {lat: 51.5223359755983, lng: 7.5251197814941},
+                        {lat: 51.4915761856399, lng: 7.496465742588},
+                        {lat: 51.4916112561088, lng: 7.4395304918289},
+                        {lat: 51.5222758953052, lng: 7.410374879837}
+					];
                 //construct the polygon.
                 DIV0Polygon = new google.maps.Polygon({
                     paths: DIV0Coords,
@@ -794,6 +805,14 @@ $(function () {
                     fillColor: '#0000FF',
                     fillOpacity: 0.05
                 });
+                DIVeventPolygon = new google.maps.Polygon({
+                    paths: DIVeventCoords,
+                    strokeColor: '#111111',
+                    strokeOpacity: 0.7,
+                    strokeWeight: 2,
+                    fillColor: '#0000FF',
+                    fillOpacity: 0.05
+                });
             }
             console.log('geofenceIV > setting IVONLYPolygons map')
 			DIV0Polygon.setMap(map);
@@ -804,6 +823,7 @@ $(function () {
 			DIV5Polygon.setMap(map);
 			DIV6Polygon.setMap(map);
 			DIV7Polygon.setMap(map);
+			DIVeventPolygon.setMap(map);
         }
     }
     $('#geofence-switchIV').change(function () {
