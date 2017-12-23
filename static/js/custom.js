@@ -2974,18 +2974,27 @@ $(function () {
 
     // MOTD.
     const motdEnabled = true
-    const motdTitle = 'News!'
-    const motd = '<h3 style="margin:0;line-height:1.1;">Das System der Silber/GoldMap-Zugänge wurde geändert. Bitte wendet euch an einen Admin in Discord, wenn ihr einen Zugang hattet oder als Silber/Goldspender einen Zugang bekommen möchtet.</h3><br>' +
-					'<h4 style="margin:0;line-height:1.1;">Die derzeitige Scanzeit ist 7:00 Uhr - 6:00 Uhr<br>(23 Std Betrieb)</h4><br>' +
-					'<span style="font-size:smaller;">(Für nicht Supporter sind IVs in der Innenstadt sichtbar)</span><br>' +
-					'<span style="color:red;">Besuche unseren <a href="https://discord.gg/zwsGCUS">Discord</a> für mehr Infos</span><br/>' +
-					'<span style="color:red;">oder schau dir auf <a href="https://www.patreon.com/rocketmapdo">Patreon</a> alle Belohnungen für Spender an</span>'
+    const motdTitle = 'Merry Christmas!'
+    const motd = '<h3 style="margin:0;line-height:1.1;">Das Rocketmap-DO Team wünscht frohe Weihnachten !</h3><br>' +
+					'<h4 style="margin:0;line-height:1.1;">Bis zum 27.12 - 5:00 gibt es in und um den Innenstadt Bereich IV für <u>jeden Nutzer</u><br></h4><br>' +
+					'<h3 style="margin:0;line-height:1.1;">Wir wünschen euch schöne Tage mit euren Familien/Freunden und einen guten Rutsch ins Jahr 2018!<br></h3><br>' +
+					'<h4 style="margin:0;line-height:1.1;">Bis zum 27.12 - 5:00 ist der Meldechannel für alle 100er und andere seltene Pokemon mit IV komplett zugänglich <br></h4>' +
+					'<span style="font-size:smaller;">(Den IV Bereich könnt ihr euch unter Menü - Anzeige - IV-Only anzeigen lassen)<br></span>' +			
+					'<span style="color:red;">Besuche auch unseren <a href="https://discord.gg/zwsGCUS">Discord</a></span><br>' +
+					'<span style="color:red;">und schau dir auf <a href="https://www.patreon.com/rocketmapdo">Patreon</a> alle Belohnungen für Spender an</span>'
+					
+					
+    //const motd = '<h3 style="margin:0;line-height:1.1;">Das System der Silber/GoldMap-Zugänge wurde geändert. Bitte wendet euch an einen Admin in Discord, wenn ihr einen Zugang hattet oder als Silber/Goldspender einen Zugang bekommen möchtet.</h3><br>' +
+					//'<h4 style="margin:0;line-height:1.1;">Die derzeitige Scanzeit ist 7:00 Uhr - 6:00 Uhr<br>(23 Std Betrieb)</h4><br>' +
+					//'<span style="font-size:smaller;">(Für nicht Supporter sind IVs in der Innenstadt sichtbar)</span><br>' +
+					//'<span style="color:red;">Besuche unseren <a href="https://discord.gg/zwsGCUS">Discord</a> für mehr Infos</span><br/>' +
+					//'<span style="color:red;">oder schau dir auf <a href="https://www.patreon.com/rocketmapdo">Patreon</a> alle Belohnungen für Spender an</span>'
 
     // Only show every unique MOTD message once. If disabled, the MOTD will be
     // shown on every visit. Requires support for localStorage.
     // Updating only the MOTD title (and not the text) will not make the MOTD
     // appear again.
-    const motdShowOnlyOnce = true
+    const motdShowOnlyOnce = false
 
     // What pages should the MOTD be shown on? By default, homepage and mobile
     // pages.
