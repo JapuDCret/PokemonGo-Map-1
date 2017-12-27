@@ -2955,7 +2955,7 @@ $(function () {
 
     // MOTD.
     const motdEnabled = true
-    const motdTitle = 'Merry Christmas!'
+    const motdTitle = 'Guten Rutsch ins Jahr 2018!'
     //const motd = '<h3 style="margin:0;line-height:1.1;">Das Rocketmap-DO Team wünscht frohe Weihnachten !</h3><br>' +
 					//'<h4 style="margin:0;line-height:1.1;">Bis zum 27.12 - 5:00 gibt es in und um den Innenstadt Bereich IV für <u>jeden Nutzer</u><br></h4><br>' +
 					//'<h3 style="margin:0;line-height:1.1;">Wir wünschen euch schöne Tage mit euren Familien/Freunden und einen guten Rutsch ins Jahr 2018!<br></h3><br>' +
