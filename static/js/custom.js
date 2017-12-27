@@ -194,7 +194,6 @@ $(function () {
                 DIV5Polygon.setMap(null);
                 DIV6Polygon.setMap(null);
                 DIV7Polygon.setMap(null);
-				DIVeventPolygon.setMap(null);
             }
         } else {
             if(DIV0Polygon == null) {
@@ -731,15 +730,6 @@ $(function () {
                         {lat: 51.5164277007715, lng: 7.4567449092865},
                         {lat: 51.5164944652205, lng: 7.4572062492371}
 					];
-				var DIVeventCoords = [
-                        {lat: 51.5222758953052, lng: 7.410374879837},
-                        {lat: 51.5532000849252, lng: 7.4389243125916},
-                        {lat: 51.5530433147842, lng: 7.4958997964859},
-                        {lat: 51.5223359755983, lng: 7.5251197814941},
-                        {lat: 51.4915761856399, lng: 7.496465742588},
-                        {lat: 51.4916112561088, lng: 7.4395304918289},
-                        {lat: 51.5222758953052, lng: 7.410374879837}
-					];
                 //construct the polygon.
                 DIV0Polygon = new google.maps.Polygon({
                     paths: DIV0Coords,
@@ -805,14 +795,6 @@ $(function () {
                     fillColor: '#0000FF',
                     fillOpacity: 0.05
                 });
-                DIVeventPolygon = new google.maps.Polygon({
-                    paths: DIVeventCoords,
-                    strokeColor: '#111111',
-                    strokeOpacity: 0.7,
-                    strokeWeight: 2,
-                    fillColor: '#0000FF',
-                    fillOpacity: 0.05
-                });
             }
             console.log('geofenceIV > setting IVONLYPolygons map')
 			DIV0Polygon.setMap(map);
@@ -823,7 +805,6 @@ $(function () {
 			DIV5Polygon.setMap(map);
 			DIV6Polygon.setMap(map);
 			DIV7Polygon.setMap(map);
-			DIVeventPolygon.setMap(map);
         }
     }
     $('#geofence-switchIV').change(function () {
@@ -2975,26 +2956,25 @@ $(function () {
     // MOTD.
     const motdEnabled = true
     const motdTitle = 'Merry Christmas!'
-    const motd = '<h3 style="margin:0;line-height:1.1;">Das Rocketmap-DO Team wünscht frohe Weihnachten !</h3><br>' +
-					'<h4 style="margin:0;line-height:1.1;">Bis zum 27.12 - 5:00 gibt es in und um den Innenstadt Bereich IV für <u>jeden Nutzer</u><br></h4><br>' +
-					'<h3 style="margin:0;line-height:1.1;">Wir wünschen euch schöne Tage mit euren Familien/Freunden und einen guten Rutsch ins Jahr 2018!<br></h3><br>' +
-					'<h4 style="margin:0;line-height:1.1;">Bis zum 27.12 - 5:00 ist der Meldechannel für alle 100er und andere seltene Pokemon mit IV komplett zugänglich <br></h4>' +
-					'<span style="font-size:smaller;">(Den IV Bereich könnt ihr euch unter Menü - Anzeige - IV-Only anzeigen lassen)<br></span>' +			
-					'<span style="color:red;">Besuche auch unseren <a href="https://discord.gg/zwsGCUS">Discord</a></span><br>' +
-					'<span style="color:red;">und schau dir auf <a href="https://www.patreon.com/rocketmapdo">Patreon</a> alle Belohnungen für Spender an</span>'
+    //const motd = '<h3 style="margin:0;line-height:1.1;">Das Rocketmap-DO Team wünscht frohe Weihnachten !</h3><br>' +
+					//'<h4 style="margin:0;line-height:1.1;">Bis zum 27.12 - 5:00 gibt es in und um den Innenstadt Bereich IV für <u>jeden Nutzer</u><br></h4><br>' +
+					//'<h3 style="margin:0;line-height:1.1;">Wir wünschen euch schöne Tage mit euren Familien/Freunden und einen guten Rutsch ins Jahr 2018!<br></h3><br>' +
+					//'<h4 style="margin:0;line-height:1.1;">Bis zum 27.12 - 5:00 ist der Meldechannel für alle 100er und andere seltene Pokemon mit IV komplett zugänglich <br></h4>' +
+					//'<span style="font-size:smaller;">(Den IV Bereich könnt ihr euch unter Menü - Anzeige - IV-Only anzeigen lassen)<br></span>' +			
+					//'<span style="color:red;">Besuche auch unseren <a href="https://discord.gg/zwsGCUS">Discord</a></span><br>' +
+					//'<span style="color:red;">und schau dir auf <a href="https://www.patreon.com/rocketmapdo">Patreon</a> alle Belohnungen für Spender an</span>'
 					
 					
-    //const motd = '<h3 style="margin:0;line-height:1.1;">Das System der Silber/GoldMap-Zugänge wurde geändert. Bitte wendet euch an einen Admin in Discord, wenn ihr einen Zugang hattet oder als Silber/Goldspender einen Zugang bekommen möchtet.</h3><br>' +
-					//'<h4 style="margin:0;line-height:1.1;">Die derzeitige Scanzeit ist 7:00 Uhr - 6:00 Uhr<br>(23 Std Betrieb)</h4><br>' +
+    const motd = 	'<h4 style="margin:0;line-height:1.1;">Die derzeitige Scanzeit ist 6:00 Uhr - 5:00 Uhr<br>(23 Std Betrieb)</h4><br>' +
 					//'<span style="font-size:smaller;">(Für nicht Supporter sind IVs in der Innenstadt sichtbar)</span><br>' +
-					//'<span style="color:red;">Besuche unseren <a href="https://discord.gg/zwsGCUS">Discord</a> für mehr Infos</span><br/>' +
-					//'<span style="color:red;">oder schau dir auf <a href="https://www.patreon.com/rocketmapdo">Patreon</a> alle Belohnungen für Spender an</span>'
+					'<span style="color:red;">Besuche unseren <a href="https://discord.gg/zwsGCUS">Discord</a> für mehr Infos</span><br/>' +
+					'<span style="color:red;">oder schau dir auf <a href="https://www.patreon.com/rocketmapdo">Patreon</a> alle Belohnungen für Spender an</span>'
 
     // Only show every unique MOTD message once. If disabled, the MOTD will be
     // shown on every visit. Requires support for localStorage.
     // Updating only the MOTD title (and not the text) will not make the MOTD
     // appear again.
-    const motdShowOnlyOnce = false
+    const motdShowOnlyOnce = true
 
     // What pages should the MOTD be shown on? By default, homepage and mobile
     // pages.
